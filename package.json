@@ -1,0 +1,19 @@
+{
+  "name": "Scrum-Board-WebEng2",
+  "version": "0.0.0",
+  "description": "Scrum Board mit Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MLjubicic/scrumboard-node-js.git"
+  },
+  "author": "Miro Ljubicic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MLjubicic/scrumboard-node-js/issues"
+  },
+  "homepage": "https://github.com/MLjubicic/scrumboard-node-js"
+}
