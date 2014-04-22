@@ -1,58 +1,77 @@
-body {
-  padding: 30px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+    font-size: medium;
+    font-family: "Times New Roman";
+
 }
 
-h2 {
-	margin:0 0 .5em 0;
+#input_fields {
+    width: 50%;
 }
 
-a {
-  color: #00B7FF;
+#scrum_application {
+    font-size: medium;
+    font-family: "Times New Roman";
+
+
 }
 
-#wrapper {
-	padding-left:312px;
-	position:relative;
+
+#scrum_application li .title-view{
+    display: block ;
+}
+#scrum_application li .title-edit{
+    display: none ;
+}
+#scrum_application .title-to-edit .title-edit{
+    display: block ;
+}
+#scrum_application .title-to-edit .title-view{
+    display: none ;
 }
 
-#Tasklist {
-	margin:0 0 30px 0;
-}
-	#Tasklist table {
-		border-collapse:separate;
-		border-spacing:1px;
-		background:#CCC;
-	}
-		#Tasklist table th {
-			background:#EEE;
-			font-weight:600;
-			padding:10px 20px;
-			text-align:center;
-		}
-		#Tasklist table tbody {
-			padding:0; margin:0;
-			border-collapse:collapse;
-			border-spacing:0px;
-		}
-			#Tasklist table td {
-				background:#FFF;
-				padding:5px 10px;
-				text-align:center;
-			}
 
-#Taskinfo {
-	width:250px;
-	position:absolute;
-	top:0; left:0;
+#scrum_application li .view-description{
+    display: block ;
 }
-	#userInfo p {
-		padding:15px;
-		border:1px solid #CCC;
-		background:rgba(80,120,255,0.05);
-	}
+#scrum_application li .description-edit{
+    display: none ;
+}
+#scrum_application .description-to-edit .description-edit{
+    display: block ;
+}
+#scrum_application .description-to-edit .description-view{
+    display: none ;
+}
 
-fieldset {
-	border:0;
-	padding:0; margin:0;
+
+#scrum_application li .estimation-view{
+    display: block ;
 }
+#scrum_application li .estimation-edit{
+    display: none ;
+}
+#scrum_application .estimation-to-edit .estimation-edit{
+    display: block ;
+}
+#scrum_application .estimation-to-edit .estimation-view{
+    display: none ;
+}
+
+#scrum_application li .assignee-view{
+    display: block ;
+}
+#scrum_application li .assignee-edit{
+    display: none ;
+}
+#scrum_application .assignee-to-edit .assignee-edit{
+    display: block ;
+}
+#scrum_application .assignee-to-edit .assignee-view{
+    display: none ;
+}
+
+
+#scrum_application li {
+    position: relative;
+    border-bottom: 1px solid lightgray;
+};

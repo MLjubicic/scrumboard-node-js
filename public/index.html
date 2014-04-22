@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Scrum Board</title>
+	
+	
+    <!-- Make it look prettier -->
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="stylesheets/style.css"/>
+
+
+    <!-- From http://getbootstrap.com/getting-started/ -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- Preload minimum JS environment with jQuery-->
+	<script src="javascripts/jquery-2.1.0.js"></script>
+
+</head>
+
+<body>
+
+	 <!-- Create 3-coloumn grid with bootstrap CSS (open, in progress, completed) -->
+<div id="scrum_application">
+    <h3>Current Tasks</h3>
+    <div class="row" id="Scrum">
+        <div class="col-md-3">
+            <div style="font-weight:bold">Open</div>
+            <ul id="task-list-open"></ul>
+        </div>
+        <div class="col-md-3" style="border-left:thin lightgray solid;">
+            <div style="font-weight:bold">WIP</div>
+            <ul id="task-list-inprogress"></ul>
+        </div>
+        <div class="col-md-3" style="border-left:thin lightgray solid;">
+            <div style="font-weight:bold">Completed</div>
+            <ul id="task-list-completed"></ul>
+        </div>
+    </div>
+
+	
+	 <!-- Magic starts here -->	
+    <ul id="task-list"></ul>
+<hr>
+    <h3>Add Task</h3>
+
+
+<div id="input_fields"
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="new-task-title" class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="new-task-title" placeholder="Enter Title">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="new-task-description" class="col-sm-2 control-label">Description</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="new-task-description" placeholder="Enter Description">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="new-task-assigned" class="col-sm-2 control-label">Assigned to</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="new-task-assigned" placeholder="Enter Assignee">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="new-task-estimation" class="col-sm-2 control-label">Estimation</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="new-task-estimation" placeholder="Enter Estimation">
+            </div>
+        </div>
+        <input id="add-item" type="button" class="btn btn-default" value="Add Task">
+    </form>
+</div>
+
+
+<!-- A few in-line scripting (easier than to put it inside separate files -->
+<script type="text/template" id="item-template">
+<%
+for(var i=0; i < tasks.length; i++) {
+    var task = tasks[i].toJSON();
+%>
+
+
+<li data-model-id="<%=tasks[i].cid%>"><%=task.cid%>
+    <div class="title-view">Title: <%= task.title %></div>
+    <input class="title-edit" type="text" value="<%= task.title %>" />
+
+    <div class="description-view">Description: <%= task.description %></div>
+    <input class="description-edit" type="text" value="<%= task.description %>" />
+
+    <div class="assignee-view" >Assigned to: <%= task.assignee %></div>
+    <input class="assignee-edit" input type="text" value="<%= task.assignee %>" />
+
+    <div class="estimation-view">Effort estimation: <%= task.estimation %></div>
+    <input class="estimation-edit" type="text" value="<%= task.estimation %>" />
+
+    <span>Status: <%= task.status %></span>
+
+
+<br>
+
+	<!-- Arrows to move a task left/right or delete it-->
+        <% if(task.status == 'open'){ %>
+        <br>Move to "In Progress" <span class="glyphicon glyphicon-arrow-right move_right"/>
+        <%}%>
+        <% if (task.status == 'In Progress') {%>
+        <br>Move to "Completed" <span class="glyphicon glyphicon-arrow-right move_right" />
+        <br><span class="glyphicon glyphicon-arrow-left move_left" /> Move back to "Open"
+    <%}%>
+        <% if (task.status == 'completed') {%>
+        <br><span class="glyphicon glyphicon-arrow-left move_left" /> Move back to "In Progress"
+    <%}%>
+        <br>Delete <span class="glyphicon glyphicon glyphicon-remove deleteItem"/>
+        
+ </li>       
+    </div>
+<% }%>
+
+</script>
+
+
+<script src="javascripts/underscore.js"></script>
+<script src="javascripts/backbone.js"></script>
+<script src="index.js"></script>
+
+
+</body>
+</html>
