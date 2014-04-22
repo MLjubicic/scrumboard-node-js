@@ -4,7 +4,7 @@
 ## Eindruck nach der Arbeit:
 Meine Stärke und Vorliebe ist definitiv nicht das Programmieren - vor allem nicht Web Entwicklung (abe im Beruf relativ wenig mit SW-Entwicklung zu tun (höchstens in der Automatisierung oder rudimentäres Scripting)).
 Daher war das schon ein grosser Brocken für mich und ich habe nach ca. 20 nervenaufreibenden Stunden und viel frickelei beschliessen müssen, mich mit dem vorliegenden Resultat zufrieden zu geben.
-Es ist hässlich und nicht durchgängig sauber programmiert.
+Es ist hässlich und nicht durchgängig sauber programmiert. Tests mit Jasmine wären auch sinnvoll gewesen - da hätte ich aber locker noch ein paar Stunden draufschlagen können.
 
 ## Ausgewählte Techniken:
 - Node.js - vorgeschrieben
