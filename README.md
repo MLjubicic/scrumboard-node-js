@@ -7,10 +7,11 @@ Daher war das schon ein grosser Brocken für mich und ich habe nach ca. 20 nerve
 Es ist hässlich und nicht durchgängig sauber programmiert.
 
 ## Ausgewählte Techniken:
-Node.js - vorgeschrieben
-Backbone
-REST
--> Auf die Verwendung von Websockets wurde aus zeitlichen Komplexitätsgründen verzichtet.
+- Node.js - vorgeschrieben
+- Backbone (mit jQuery und Underscore)
+- REST
+- Bootstrap (für noch schönere CSS effekte)
+- Auf die Verwendung von Websockets wurde aus zeitlichen Komplexitätsgründen verzichtet
 
 ## Heroku
 Auf Heroku crasht der server ständig, lokal läuft die Applikation jedenfalls.
